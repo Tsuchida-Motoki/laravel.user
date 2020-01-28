@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\News;
 use App\History;
+
 use Carbon\Carbon;
+
+
 class NewsController extends Controller
 {
     //
@@ -59,7 +62,7 @@ public function update(Request $request)
 {
  $this->validate($request, News::$rules);
  
- $$news = News::find($request->id);
+ $news = News::find($request->id);
  
  $news_form = $request->all();
  if(isset($news_form['image'])){
@@ -75,12 +78,12 @@ public function update(Request $request)
  
  $news->fill($news_form)->save();
  
- $history = new History;
+$history = new History;
  $history->news_id = $news->id;
- $history->edited_at= Carbon::now();
+ $history->edited_at = Carbon::now();
  $history->save();
  
- return redirect('admin/news');
+ return redirect('admin/news/');
 }
 
 

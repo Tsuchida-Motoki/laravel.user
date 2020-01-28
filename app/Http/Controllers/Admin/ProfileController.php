@@ -49,7 +49,7 @@ class ProfileController extends Controller
     }
     
     public function edit (Request $request) 
-    {
+    {dd($request);
         $profile = Profile::find($request->id);
         if(empty($profile)){
             abort(404);
