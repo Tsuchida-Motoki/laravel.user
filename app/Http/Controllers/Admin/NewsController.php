@@ -8,8 +8,6 @@ use App\News;
 use App\History;
 
 use Carbon\Carbon;
-
-
 class NewsController extends Controller
 {
     //
