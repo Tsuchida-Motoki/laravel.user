@@ -33,3 +33,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 ROute::get('/', 'NewsController@index');
 Route::get('/profile', 'ProfileController@index');
 
+
